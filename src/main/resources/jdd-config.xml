@@ -46,7 +46,4 @@
 			</util:list>
 		</property>
 	</bean>
-
-
-
 </beans>
