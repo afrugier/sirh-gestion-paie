@@ -30,8 +30,8 @@ public class GradeServiceJdbcTemplateTest {
 		gradeService.sauvegarder(grade);
 		assertThat(gradeService.lister().contains(grade));
 
-		gradeService.mettreAJour(gradeMAJ);
-		assertThat(gradeService.lister().contains(gradeMAJ));
+		 gradeService.mettreAJour(gradeMAJ);
+		 assertThat(gradeService.lister().contains(gradeMAJ));
 	}
 
 }

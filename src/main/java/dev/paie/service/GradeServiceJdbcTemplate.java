@@ -6,11 +6,11 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
 import dev.paie.entite.Grade;
 
-@Service
+@Repository
 public class GradeServiceJdbcTemplate implements GradeService {
 
 	private JdbcTemplate jdbcTemplate;
