@@ -36,11 +36,11 @@ public class GradeServiceJdbcTemplate implements GradeService {
 
 	@Override
 	public List<Grade> lister() {
-		String sql="SELECT * FROM `grade`";
-		
+		String sql = "SELECT * FROM `grade`";
+
 		return this.jdbcTemplate.query(sql, (rs, rowNum) -> {
 			Grade g = new Grade();
-			g.setId(rs.getInt("Id"));
+			g.setId(rs.getInt("id"));
 			g.setCode(rs.getString("code"));
 			g.setNbHeuresBase(rs.getBigDecimal("nbHeuresBases"));
 			g.setTauxBase(rs.getBigDecimal("tauxBase"));
