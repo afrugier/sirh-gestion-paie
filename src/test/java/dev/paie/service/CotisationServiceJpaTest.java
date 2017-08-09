@@ -28,15 +28,10 @@ public class CotisationServiceJpaTest {
 		Cotisation cotisationMAJ = new Cotisation("Cot1", "Cotisation handicape", new BigDecimal(300),
 				new BigDecimal(150));
 
-		// TODO sauvegarder une nouvelle cotisation
 		cotisationService.sauvegarder(nouvelleCotisation);
-		// TODO vérifier qu'il est possible de récupérer la nouvelle cotisation
-		// via la méthode lister
 		assertThat(cotisationService.lister().contains(nouvelleCotisation));
-		// TODO modifier une cotisation
+
 		cotisationService.mettreAJour(cotisationMAJ);
-		// TODO vérifier que les modifications sont bien prises en compte via la
-		// méthode lister
 		assertThat(cotisationService.lister().contains(cotisationMAJ));
 	}
 }
