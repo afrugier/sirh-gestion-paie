@@ -19,6 +19,18 @@ public class RemunerationEmploye {
 	@ManyToOne
 	private Grade grade;
 	
+	public RemunerationEmploye() {
+		super();
+	}
+
+	public RemunerationEmploye(String matricule, Entreprise entreprise, ProfilRemuneration profilRemuneration,
+			Grade grade) {
+		super();
+		this.matricule = matricule;
+		this.entreprise = entreprise;
+		this.profilRemuneration = profilRemuneration;
+		this.grade = grade;
+	}
 	public String getMatricule() {
 		return matricule;
 	}

@@ -7,6 +7,7 @@ import java.util.stream.IntStream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import dev.paie.entite.Cotisation;
@@ -14,15 +15,20 @@ import dev.paie.entite.Entreprise;
 import dev.paie.entite.Grade;
 import dev.paie.entite.Periode;
 import dev.paie.entite.ProfilRemuneration;
+import dev.paie.entite.Utilisateur;
+import dev.paie.entite.Utilisateur.ROLES;
 import dev.paie.repository.CotisationRepository;
 import dev.paie.repository.EntreprisesRepository;
 import dev.paie.repository.GradeRepository;
 import dev.paie.repository.PeriodeRepository;
 import dev.paie.repository.ProfilRemunerationRepository;
+import dev.paie.repository.UtilisateurRepository;
 
 @Service
 public class InitialiserDonneesServiceDev implements InitialiserDonneesService {
 
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 	@Autowired
 	private ApplicationContext context;
 	@Autowired
@@ -35,6 +41,8 @@ public class InitialiserDonneesServiceDev implements InitialiserDonneesService {
 	ProfilRemunerationRepository repoProfilRemuneration;
 	@Autowired
 	PeriodeRepository repoPeriode;
+	@Autowired
+	UtilisateurRepository repoUser;
 
 	@Override
 	public void initialiser() {
@@ -57,6 +65,9 @@ public class InitialiserDonneesServiceDev implements InitialiserDonneesService {
 			repoPeriode.save(p);
 		});
 
+		repoUser.save(new Utilisateur("admin", passwordEncoder.encode("admin"), true, ROLES.ROLE_ADMINISTRATEUR));
+		repoUser.save(
+				new Utilisateur("anthony", passwordEncoder.encode("naheulbeuk"), true, ROLES.ROLE_ADMINISTRATEUR));
 	}
 
 }

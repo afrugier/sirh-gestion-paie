@@ -6,4 +6,5 @@ import dev.paie.entite.Entreprise;
 
 public interface EntreprisesRepository extends JpaRepository<Entreprise, Integer> {
 
+	Entreprise findById(Integer id);
 }
