@@ -25,6 +25,12 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 	</build>
 
 	<dependencyManagement>
@@ -137,4 +143,29 @@
 			<version>4.2.2.RELEASE</version>
 		</dependency>
 	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<maven.driver>com.mysql.jdbc.Driver</maven.driver>
+				<maven.url>jdbc:mysql://localhost:3306/sirh-paie?useSSL=false</maven.url>
+				<maven.username>root</maven.username>
+				<maven.password></maven.password>
+			</properties>
+		</profile>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<maven.driver>org.h2.Driver</maven.driver>
+				<maven.url>jdbc:h2:mem:sirh-paie-test;DB_CLOSE_DELAY=-1</maven.url>
+				<maven.username>sa</maven.username>
+				<maven.password></maven.password>
+			</properties>
+		</profile>
+	</profiles>
+
 </project>

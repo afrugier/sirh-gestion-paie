@@ -68,6 +68,7 @@ public class InitialiserDonneesServiceDev implements InitialiserDonneesService {
 		repoUser.save(new Utilisateur("admin", passwordEncoder.encode("admin"), true, ROLES.ROLE_ADMINISTRATEUR));
 		repoUser.save(
 				new Utilisateur("anthony", passwordEncoder.encode("naheulbeuk"), true, ROLES.ROLE_ADMINISTRATEUR));
+		repoUser.save(new Utilisateur("thomas", passwordEncoder.encode("thomas"), true, ROLES.ROLE_UTILISATEUR));
 	}
 
 }

@@ -20,12 +20,14 @@
 <body>
 	<div>
 		<ul class="nav nav-pills">
-			<li role="presentations"><a href="#">Lister les
+			<li role="presentations"><a href="<c:url value='/mvc/employes/lister'> </c:url>">Lister les
 					remunerations</a></li>
-			<li role="presentations"><a href="#">Ajouter une
+			<li role="presentations"><a href="<c:url value='/mvc/employes/creer'> </c:url>">Ajouter une
 					remuneration</a></li>
 			<li role="presentations"><a href="#">Lister les bulletins</a></li>
 			<li role="presentations"><a href="#">Créer un bulletin</a></li>
+			<li role="presentations"><a
+				href="<c:url value='/mvc/employes/logout'> </c:url>">Logout</a></li>
 		</ul>
 	</div>
 	<h1 align="center">Ajouter une remuneration</h1>
