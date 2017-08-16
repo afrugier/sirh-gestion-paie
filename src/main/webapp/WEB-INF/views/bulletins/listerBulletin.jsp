@@ -34,7 +34,7 @@
 			<li role="presentations"><a href="/paie/mvc/bulletins/creerB">Créer
 					un bulletin</a></li>
 			<li role="presentations"><a
-				href="<c:url value='/mvc/employes/logoutB'> </c:url>">Logout</a></li>
+				href="<c:url value='/mvc/employes/logout'> </c:url>">Logout</a></li>
 		</ul>
 	</div>
 	<h1 align="center">Liste des remunerations</h1>
