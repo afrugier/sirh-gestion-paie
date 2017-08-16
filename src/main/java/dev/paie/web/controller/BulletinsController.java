@@ -9,16 +9,20 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import dev.paie.entite.BulletinSalaire;
+import dev.paie.entite.Cotisation;
 import dev.paie.entite.Periode;
 import dev.paie.entite.RemunerationEmploye;
 import dev.paie.entite.ResultatCalculRemuneration;
 import dev.paie.repository.BulletinRepository;
+import dev.paie.repository.CotisationRepository;
 import dev.paie.repository.PeriodeRepository;
+import dev.paie.repository.ProfilRemunerationRepository;
 import dev.paie.repository.RemunerationEmployeRepository;
 import dev.paie.service.CalculerRemunerationService;
 
@@ -32,9 +36,11 @@ public class BulletinsController {
 	@Autowired
 	PeriodeRepository repoPeriode;
 	@Autowired
-	CalculerRemunerationService remunerationService;
-	@Autowired
 	CalculerRemunerationService calculRemuneration;
+	@Autowired
+	CotisationRepository repoCotisation;
+	@Autowired
+	ProfilRemunerationRepository repoProfil;
 
 	@RequestMapping(method = RequestMethod.GET, path = "/creerB")
 	@Secured("ROLE_ADMINISTRATEUR")
@@ -62,8 +68,31 @@ public class BulletinsController {
 
 		List<ResultatCalculRemuneration> resultatsCalcul = listBulletin.stream()
 				.map(b -> calculRemuneration.calculer(b)).collect(Collectors.toList());
-
 		mv.addObject("resultatsCalcul", resultatsCalcul);
+
+		return mv;
+	}
+
+	@RequestMapping(method = RequestMethod.GET, path = "/visuB/{id}")
+	@Secured({ "ROLE_ADMINISTRATEUR", "ROLE_UTILISATEUR" })
+	public ModelAndView visualiserBulletin(@PathVariable("id") Integer id) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("bulletins/visualiserBulletin");
+
+		BulletinSalaire bulletin = repoBulletin.findById(id);
+		mv.addObject("bulletin", bulletin);
+
+
+		ResultatCalculRemuneration resultatsCalcul = calculRemuneration.calculer(bulletin);
+		mv.addObject("resultatsCalcul", resultatsCalcul);
+
+		List<Cotisation> listCotisationImposable = bulletin.getRemunerationEmploye().getProfilRemuneration()
+				.getCotisationsImposables();
+		mv.addObject("listCotisationImposable", listCotisationImposable);
+
+		List<Cotisation> listCotisationNomImposable = bulletin.getRemunerationEmploye().getProfilRemuneration()
+				.getCotisationsNonImposables();
+		mv.addObject("listCotisationNomImposable", listCotisationNomImposable);
 
 		return mv;
 	}

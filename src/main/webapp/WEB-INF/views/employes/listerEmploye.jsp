@@ -22,17 +22,17 @@
 <body>
 	<div>
 		<ul class="nav nav-pills">
-			<li role="presentations"><a
+			<li><a
 				href="<c:url value='/mvc/employes/lister'> </c:url>">Lister les
 					remunerations</a></li>
-			<li role="presentations"><a
+			<li><a
 				href="<c:url value='/mvc/employes/creer'> </c:url>">Ajouter une
 					remuneration</a></li>
-			<li role="presentations"><a href="/paie/mvc/bulletins/listerB">Lister
+			<li><a href="/paie/mvc/bulletins/listerB">Lister
 					les bulletins</a></li>
-			<li role="presentations"><a href="/paie/mvc/bulletins/creerB">Créer
+			<li><a href="/paie/mvc/bulletins/creerB">Créer
 					un bulletin</a></li>
-			<li role="presentations"><a
+			<li><a
 				href="<c:url value='/mvc/employes/logout'> </c:url>">Logout</a></li>
 		</ul>
 	</div>
