@@ -1,3 +1,4 @@
+<%@page import="dev.paie.entite.ResultatCalculRemuneration"%>
 <%@page import="java.time.ZonedDateTime"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -33,26 +34,33 @@
 			<li role="presentations"><a href="/paie/mvc/bulletins/creerB">Créer
 					un bulletin</a></li>
 			<li role="presentations"><a
-				href="<c:url value='/mvc/employes/logout'> </c:url>">Logout</a></li>
+				href="<c:url value='/mvc/employes/logoutB'> </c:url>">Logout</a></li>
 		</ul>
 	</div>
 	<h1 align="center">Liste des remunerations</h1>
 
-	<table border='2'
-		class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+	<table border='2' class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
 		<thead>
 			<tr>
 				<th style="text-align: center;">Date et heure de création</th>
+				<th style="text-align: center;">Période</th>
 				<th style="text-align: center;">Matricule</th>
-				<th style="text-align: center;">Grade</th>
+				<th style="text-align: center;">Salaire Brut</th> <!-- calcul -->
+				<th style="text-align: center;">Net Imposable</th> <!-- calcul -->
+				<th style="text-align: center;">Net A Payer</th> <!-- calcul -->
+				<th style="text-align: center;">Action</th>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="Employe" items="${listEmploye}">
+			<c:forEach var="Bulletin" items="${listBulletin}" varStatus="b">
 				<tr>
-					<td style="text-align: center;">${Employe.dateHeureCreation}</td>
-					<td style="text-align: center;">${Employe.matricule}</td>
-					<td style="text-align: center;">${Employe.grade.code}</td>
+					<td style="text-align: center;">${Bulletin.dateHeureCreation}</td>
+					<td style="text-align: center;">${Bulletin.periode.dateDebut} / ${Bulletin.periode.dateFin}</td>
+					<td style="text-align: center;">${Bulletin.remunerationEmploye.matricule}</td>
+					<td style="text-align: center;">${resultatsCalcul[b.index].salaireBrut}</td>
+					<td style="text-align: center;">${resultatsCalcul[b.index].netImposable}</td>
+					<td style="text-align: center;">${resultatsCalcul[b.index].netAPayer}</td>
+					<td style="text-align: center;"><a href="#">Visualiser</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

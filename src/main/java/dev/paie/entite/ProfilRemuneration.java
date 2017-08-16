@@ -10,6 +10,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 @Entity
 public class ProfilRemuneration {
 	@Id
@@ -19,10 +22,12 @@ public class ProfilRemuneration {
 
 	@ManyToMany
 	@JoinTable(name = "pr_cotnonimp", joinColumns = @JoinColumn(name = "ProfilRemuneration_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "cotisationsNonImposables_id", referencedColumnName = "id"))
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<Cotisation> cotisationsNonImposables;
 
 	@ManyToMany
 	@JoinTable(name = "pr_cotimp", joinColumns = @JoinColumn(name = "ProfilRemuneration_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "cotisationsImposables_id", referencedColumnName = "id"))
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<Cotisation> cotisationsImposables;
 
 	@ManyToMany

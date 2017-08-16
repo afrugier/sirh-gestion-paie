@@ -20,12 +20,16 @@
 <body>
 	<div>
 		<ul class="nav nav-pills">
-			<li role="presentations"><a href="<c:url value='/mvc/employes/lister'> </c:url>">Lister les
+			<li role="presentations"><a
+				href="<c:url value='/mvc/employes/lister'> </c:url>">Lister les
 					remunerations</a></li>
-			<li role="presentations"><a href="<c:url value='/mvc/employes/creer'> </c:url>">Ajouter une
+			<li role="presentations"><a
+				href="<c:url value='/mvc/employes/creer'> </c:url>">Ajouter une
 					remuneration</a></li>
-			<li role="presentations"><a href="#">Lister les bulletins</a></li>
-			<li role="presentations"><a href="#">Créer un bulletin</a></li>
+			<li role="presentations"><a href="/paie/mvc/employes/listerB">Lister
+					les bulletins</a></li>
+			<li role="presentations"><a href="/paie/mvc/employes/creerB">Créer
+					un bulletin</a></li>
 			<li role="presentations"><a
 				href="<c:url value='/mvc/employes/logout'> </c:url>">Logout</a></li>
 		</ul>
@@ -37,8 +41,8 @@
 
 		<!-- Text input-->
 		<div class="form-group">
-			<label class="col-md-4 control-label" for="textinput">Matricule</label>
-			<div class="col-md-4">
+			<label class="col-md-3 col-sm-3 col-xs-3 col-sm-offset-1 col-xs-offset-1 control-label" for="textinput">Matricule</label>
+			<div class="col-md-4 col-sm-7 col-xs-7">
 				<input id="matricule" name="matricule" class="form-control input-md"
 					type="text">
 			</div>
@@ -46,8 +50,8 @@
 
 		<!-- Select Entreprise -->
 		<div class="form-group">
-			<label class="col-md-4 control-label" for="entreprise">Entreprise</label>
-			<div class="col-md-4">
+			<label class="col-md-3 col-sm-3 col-xs-3 col-sm-offset-1 col-xs-offset-1 control-label" for="entreprise">Entreprise</label>
+			<div class="col-md-4 col-sm-7 col-xs-7">
 				<select id="entreprise" name="entreprise" class="form-control">
 					<c:forEach var="entreprise" items="${listEntreprise}">
 						<option value="${entreprise.id}">${entreprise.denomination}</option>
@@ -58,8 +62,8 @@
 
 		<!-- Select Basic -->
 		<div class="form-group">
-			<label class="col-md-4 control-label" for="profil">Profil</label>
-			<div class="col-md-4">
+			<label class="col-md-3 col-sm-3 col-xs-3 col-sm-offset-1 col-xs-offset-1 control-label" for="profil">Profil</label>
+			<div class="col-md-4 col-sm-7 col-xs-7">
 				<select id="profil" name="profil" class="form-control">
 					<c:forEach var="profil" items="${listProfil}">
 						<option value="${profil.id}">${profil.code}</option>
@@ -70,8 +74,8 @@
 
 		<!-- Select Basic -->
 		<div class="form-group">
-			<label class="col-md-4 control-label" for="grade">Grade</label>
-			<div class="col-md-4">
+			<label class="col-md-3 col-sm-3 col-xs-3 col-sm-offset-1 col-xs-offset-1 control-label" for="grade">Grade</label>
+			<div class="col-md-4 col-sm-7 col-xs-7">
 				<select id="grade" name="grade" class="form-control">
 					<c:forEach var="grade" items="${listGrade}">
 						<option value="${grade.id}">${grade.code}</option>
@@ -82,8 +86,8 @@
 
 		<!-- Button -->
 		<div class="form-group">
-			<label class="col-md-4 control-label" for="singlebutton"></label>
-			<div class="col-md-4">
+			<label class="col-md-7 control-label" for="singlebutton"></label>
+			<div class="col-md-1">
 				<button id="ajouter" name="ajouter" class="btn btn-primary">Ajouter</button>
 			</div>
 		</div>

@@ -68,7 +68,7 @@ public class RemunerationEmployeController {
 
 	@RequestMapping(method = RequestMethod.POST, path = "/creer")
 	@Secured("ROLE_ADMINISTRATEUR")
-	protected String doPost(HttpServletRequest req) {
+	protected String doPostEmployer(HttpServletRequest req) {
 		String matricule = req.getParameter("matricule");
 		String entrepriseId = req.getParameter("entreprise");
 		String profilRemunerationId = req.getParameter("profil");
@@ -78,8 +78,7 @@ public class RemunerationEmployeController {
 		ProfilRemuneration profilRemuneration = repoProfilRemuneration.findById(Integer.parseInt(profilRemunerationId));
 		Grade grade = repoGrade.findById(Integer.parseInt(gradeId));
 
-		repoEmploye
-				.save(new RemunerationEmploye(matricule, entreprise, profilRemuneration, grade));
+		repoEmploye.save(new RemunerationEmploye(matricule, entreprise, profilRemuneration, grade));
 
 		return "redirect:/mvc/employes/lister";
 

@@ -29,7 +29,8 @@ public class CalculerRemunerationServiceSimple implements CalculerRemunerationSe
 
 		BigDecimal totalRetenueSalarial = bulletin.getRemunerationEmploye().getProfilRemuneration()
 				.getCotisationsNonImposables().stream().filter(t -> t.getTauxSalarial() != null)
-				.map(Cotisation::getTauxSalarial).reduce(BigDecimal.ZERO, BigDecimal::add).multiply(new BigDecimal(resultat.getSalaireBrut()));
+				.map(Cotisation::getTauxSalarial).reduce(BigDecimal.ZERO, BigDecimal::add)
+				.multiply(new BigDecimal(resultat.getSalaireBrut()));
 		resultat.setTotalRetenueSalarial(paieUtil.formaterBigDecimal(totalRetenueSalarial));
 
 		BigDecimal totalCotisationsPatronales = bulletin.getRemunerationEmploye().getProfilRemuneration()

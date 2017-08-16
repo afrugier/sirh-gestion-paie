@@ -22,7 +22,7 @@ public class RemunerationEmploye {
 	@ManyToOne
 	private Grade grade;
 	private String dateHeureCreation;
-	
+
 	public RemunerationEmploye() {
 		super();
 	}
@@ -42,7 +42,7 @@ public class RemunerationEmploye {
 	public void setMatricule(String matricule) {
 		this.matricule = matricule;
 	}
-	
+
 	public Entreprise getEntreprise() {
 		return entreprise;
 	}
@@ -75,9 +75,6 @@ public class RemunerationEmploye {
 	public void setDateHeureCreation(String dateHeureCreation) {
 		this.dateHeureCreation = dateHeureCreation;
 	}
-	
-	
-	
-	
+
 
 }
