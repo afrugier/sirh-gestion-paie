@@ -22,19 +22,7 @@
 <title>SGP - App</title>
 </head>
 <body>
-	<div>
-		<ul class="nav nav-pills">
-			<li><a href="<c:url value='/mvc/employes/lister'> </c:url>">Lister
-					les remunerations</a></li>
-			<li><a href="<c:url value='/mvc/employes/creer'> </c:url>">Ajouter
-					une remuneration</a></li>
-			<li><a href="<c:url value='/mvc/bulletins/listerB'> </c:url>">Lister
-					les bulletins</a></li>
-			<li><a href="<c:url value='/mvc/bulletins/creerB'> </c:url>">Créer
-					un bulletin</a></li>
-			<li><a href="<c:url value='/mvc/employes/logout'> </c:url>">Logout</a></li>
-		</ul>
-	</div>
+	<c:import url="../menu.jsp"></c:import>
 	<a href="<c:url value='/mvc/bulletins/listerB'> </c:url>"><img alt="retour" style="width:10%" class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1" src="http://img.freepik.com/icones-gratuites/gauche-fleche-croquis_318-75348.jpg?size=338&ext=jpg"></a>
 	<h1 align="center" class="col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">Bulletin de salaire</h1>
 	<div

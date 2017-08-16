@@ -18,22 +18,7 @@
 <title>SGP - App</title>
 </head>
 <body>
-	<div>
-		<ul class="nav nav-pills">
-			<li><a
-				href="<c:url value='/mvc/employes/lister'> </c:url>">Lister les
-					remunerations</a></li>
-			<li><a
-				href="<c:url value='/mvc/employes/creer'> </c:url>">Ajouter une
-					remuneration</a></li>
-			<li><a href="/paie/mvc/bulletins/listerB">Lister
-					les bulletins</a></li>
-			<li><a href="/paie/mvc/bulletins/creerB">Créer
-					un bulletin</a></li>
-			<li><a
-				href="<c:url value='/mvc/employes/logout'> </c:url>">Logout</a></li>
-		</ul>
-	</div>
+	<c:import url="../menu.jsp"></c:import>
 	<h1 align="center">Ajouter une remuneration</h1>
 
 
