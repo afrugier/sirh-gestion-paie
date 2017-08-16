@@ -33,6 +33,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers("/bootstrap-3.3.7-dist/**").permitAll().anyRequest().authenticated().and()
 				.exceptionHandling().accessDeniedPage("/mvc/employes/lister").and()
 				.formLogin().loginPage("/mvc/connexion").permitAll().defaultSuccessUrl("/mvc/employes/lister")
-				.and().logout();
+				.and().logout().logoutSuccessUrl("/mvc/employes/lister");
 	}
 }

@@ -3,6 +3,7 @@ package dev.paie.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.web.servlet.ViewResolver;
@@ -12,7 +13,8 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Configuration
 @EnableWebMvc
 @Import({ ServicesConfig.class })
-@ComponentScan("dev.paie.web.controller")
+@ComponentScan({ "dev.paie.web.controller", "dev.paie.config.aspect" })
+@EnableAspectJAutoProxy
 @ImportResource({ "classpath:entreprises.xml", "classpath:cotisations-imposables.xml",
 		"classpath:cotisations-non-imposables.xml", "classpath:grades.xml", "classpath:profils-remuneration.xml" })
 public class WebAppConfig {
