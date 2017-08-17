@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,10 +13,32 @@
 	<h1>Connexion</h1>
 	<!-- Spring Security s'attend aux paramètres "username" et "password" -->
 	<form method="post">
-		<input name="username"> 
-		<input name="password" type="password"> 
-		<input class="btn btn-default" type="submit" value="Se connecter">
-		<sec:csrfInput/>
+		<div class="form-group">
+			<label
+				class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1 control-label"
+				for="username">Identifiant</label>
+			<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+				<input name="username" class="form-control input-md" required="">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label
+				class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1 control-label"
+				for="password">Mot De Passe</label>
+			<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+				<input name="password" type="password" class="form-control input-md" required="">
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label class="control-label" for="singlebutton"></label>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-lg-offset-8 col-md-offset-8 col-sm-offset-8 col-xs-offset-8">
+				<input class="btn btn-block btn-primary" type="submit" value="Se connecter">
+			</div>
+		</div>
+		 
+		<sec:csrfInput />
 	</form>
 	<!-- en cas d'erreur un paramètre "error" est créé par Spring Security -->
 	<c:if test="${param.error !=null}">

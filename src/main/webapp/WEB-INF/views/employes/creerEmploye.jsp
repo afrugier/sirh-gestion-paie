@@ -26,8 +26,8 @@
 
 		<!-- Text input-->
 		<div class="form-group">
-			<label class="col-md-3 col-sm-3 col-xs-3 col-sm-offset-1 col-xs-offset-1 control-label" for="textinput">Matricule</label>
-			<div class="col-md-4 col-sm-7 col-xs-7">
+			<label class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1 control-label" for="textinput">Matricule</label>
+			<div class="col-lg-4 col-md-7 col-sm-7 col-xs-7">
 				<input id="matricule" name="matricule" class="form-control input-md"
 					type="text">
 			</div>
@@ -35,8 +35,8 @@
 
 		<!-- Select Entreprise -->
 		<div class="form-group">
-			<label class="col-md-3 col-sm-3 col-xs-3 col-sm-offset-1 col-xs-offset-1 control-label" for="entreprise">Entreprise</label>
-			<div class="col-md-4 col-sm-7 col-xs-7">
+			<label class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-sm-offset-1 col-xs-offset-1 control-label" for="entreprise">Entreprise</label>
+			<div class="col-lg-4 col-md-7 col-sm-7 col-xs-7">
 				<select id="entreprise" name="entreprise" class="form-control">
 					<c:forEach var="entreprise" items="${listEntreprise}">
 						<option value="${entreprise.id}">${entreprise.denomination}</option>
@@ -47,8 +47,8 @@
 
 		<!-- Select Basic -->
 		<div class="form-group">
-			<label class="col-md-3 col-sm-3 col-xs-3 col-sm-offset-1 col-xs-offset-1 control-label" for="profil">Profil</label>
-			<div class="col-md-4 col-sm-7 col-xs-7">
+			<label class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-sm-offset-1 col-xs-offset-1 control-label" for="profil">Profil</label>
+			<div class="col-lg-4 col-md-7 col-sm-7 col-xs-7">
 				<select id="profil" name="profil" class="form-control">
 					<c:forEach var="profil" items="${listProfil}">
 						<option value="${profil.id}">${profil.code}</option>
@@ -59,8 +59,8 @@
 
 		<!-- Select Basic -->
 		<div class="form-group">
-			<label class="col-md-3 col-sm-3 col-xs-3 col-sm-offset-1 col-xs-offset-1 control-label" for="grade">Grade</label>
-			<div class="col-md-4 col-sm-7 col-xs-7">
+			<label class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-sm-offset-1 col-xs-offset-1 control-label" for="grade">Grade</label>
+			<div class="col-lg-4 col-md-7 col-sm-7 col-xs-7">
 				<select id="grade" name="grade" class="form-control">
 					<c:forEach var="grade" items="${listGrade}">
 						<option value="${grade.id}">${grade.code}</option>
@@ -71,9 +71,9 @@
 
 		<!-- Button -->
 		<div class="form-group">
-			<label class="col-md-7 control-label" for="singlebutton"></label>
-			<div class="col-md-1">
-				<button id="ajouter" name="ajouter" class="btn btn-primary">Ajouter</button>
+			<label class="control-label" for="singlebutton"></label>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-lg-offset-5 col-md-offset-8 col-sm-offset-8 col-xs-offset-8">
+				<button id="ajouter" name="ajouter" class="btn btn-block btn-primary">Ajouter</button>
 			</div>
 		</div>
 		<sec:csrfInput/>

@@ -27,8 +27,8 @@
 
 		<!-- Select Basic -->
 		<div class="form-group">
-			<label class="col-md-4 control-label" for="periode">Période</label>
-			<div class="col-md-4">
+			<label class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1 control-label" for="periode">Période</label>
+			<div class="col-lg-4 col-md-7 col-sm-7 col-xs-7">
 				<select id="periode" name="periode" class="form-control">
 					<c:forEach var="periode" items="${listPeriode}">
 						<option value="${periode.id}">debut : ${periode.dateDebut} / Fin : ${periode.dateFin}</option>
@@ -39,8 +39,8 @@
 
 		<!-- Select Basic -->
 		<div class="form-group">
-			<label class="col-md-4 control-label" for="matricule">Matricule</label>
-			<div class="col-md-4">
+			<label class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1 control-label" for="matricule">Matricule</label>
+			<div class="col-lg-4 col-md-7 col-sm-7 col-xs-7">
 				<select id="matricule" name="matricule" class="form-control">
 					<c:forEach var="employer" items="${listEmployer}">
 						<option value="${employer.id}">${employer.matricule}</option>
@@ -51,9 +51,9 @@
 
 		<!-- Text input-->
 		<div class="form-group">
-			<label class="col-md-4 control-label" for="prime">Prime
+			<label class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1 control-label" for="prime">Prime
 				exceptionnelle</label>
-			<div class="col-md-4">
+			<div class="col-lg-4 col-md-7 col-sm-7 col-xs-7">
 				<input id="prime" name="prime" placeholder="Prime exceptionnelle"
 					class="form-control input-md" type="text">
 			</div>
@@ -61,9 +61,9 @@
 
 		<!-- Button -->
 		<div class="form-group">
-			<label class="col-md-4 control-label" for=""></label>
-			<div class="col-md-4">
-				<button id="" name="" class="btn btn-default">Créer</button>
+			<label class="control-label" for="singlebutton"></label>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-lg-offset-5 col-md-offset-8 col-sm-offset-8 col-xs-offset-8">
+				<button id="creer" name="creer" class="btn btn-block btn-primary">Créer</button>
 			</div>
 		</div>
 		<sec:csrfInput />
